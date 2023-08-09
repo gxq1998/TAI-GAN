@@ -3,4 +3,4 @@ TAI-GAN: Temporally and Anatomically Informed GAN for early-to-late frame conver
 
 To appear in SASHIMI workshop 2023.
 
-Code to be updated soon.
+Code to be uploaded soon.
