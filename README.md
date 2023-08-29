@@ -32,7 +32,9 @@ If using cross validation, you could specify the subjects for the current split 
 ## Train and evaluation
 
 `python main_cv.py` to run GAN one-to-one (Sundar et al.) and all-to-one baselines.
+
 `python main_cv_film_mask.py` to run the proposed TAI-GAN.
+
 `python main_cv_film.py` and `python main_cv_mask.py` to run the ablation studies.
 
 ## Papers
