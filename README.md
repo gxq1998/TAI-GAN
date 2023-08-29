@@ -12,12 +12,19 @@ We encourage users to download and process their own data.
 You will likely need to pre-process your own dataset and save it as an npz file with keys as follows:
 
 `'img'`: the concatenated image volumes with the size of `[*shape, temporal_dim, num_subject]`. Here, for our dataset with 85 subjects, 27-frame dynamic scans and a 3D volume size of [64,64,64], this array shape is [64, 64, 64, 27, 85].
+
 `'rv'`: the time-activity curves (TACs) of right ventricle blood pool (RVBP), with the shape of `[temporal_dim, num_subject]`
+
 `'lv'`: the TACs of left ventricle blood pool (LVBP), with the shape of `[temporal_dim, num_subject]`
+
 `'myo'`: the TACs of myocardium, with the shape of `[temporal_dim, num_subject]`
+
 `'mask'`: the concatenated segmentation volumes, with the same size as `'img'`
-`'eq'`: the temporal index of the first frame where the LVBP TAC is equal to or higher than RVBP TAC (Shi et al. IEEE-TMI 2021). This is helpful in stratifying very early frames and for further quantification.
+
+`'eq'`: the temporal index of the first frame where the LVBP TAC is equal to or higher than RVBP TAC (Shi et al. IEEE-TMI 2021). This is helpful in stratifying very early frames and for further quantification
+
 `'myo_label'`: the temporal index of the first frame where myocardium activity is higher than 10% maximum. This is the starting point of frame conversion since all the earlier frames don't have a significant effect on MBF quantification and are discarded
+
 `'last_label'`: the temporal index of the last frame for conversion since due to temporal normalization (Shi et al. IEEE-TMI 2021) all the later frames are duplicates and are not sent for conversion
         
 If using cross validation, you could specify the subjects for the current split with the training and validation subject indexes.
