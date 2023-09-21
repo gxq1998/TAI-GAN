@@ -25,7 +25,7 @@ You will likely need to pre-process your own dataset and save it as an npz file 
 
 `'myo_label'`: the temporal index of the first frame where myocardium activity is higher than 10% maximum. This is the starting point of frame conversion since all the earlier frames don't have a significant effect on MBF quantification and are discarded
 
-`'last_label'`: the temporal index of the last frame for conversion since due to temporal normalization (Shi et al. IEEE-TMI 2021) all the later frames are duplicates and are not sent for conversion
+`'last_label'`: the temporal index of the last frame for conversion since due to temporal normalization (Shi et al. IEEE-TMI 2021) all the frames later than this index are duplicates and are not sent for conversion
         
 If using cross validation, you could specify the subjects for the current split with the training and validation subject indexes.
 
